@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/pfp.jpg">
+</head>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const titleText = "@coolhighzz";
+            let index = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                if (!isDeleting && index < titleText.length) {
+                    document.title += titleText.charAt(index);
+                    index++;
+                } else if (isDeleting && index > 0) {
+                    document.title = titleText.substring(0, index - 1);
+                    index--;
+                }
+
+                if (index === titleText.length) {
+                    isDeleting = true;
+                } else if (index === 0) {
+                    isDeleting = false;
+                }
+
+                setTimeout(typeWriter, 500);
+            }
+
+            typeWriter();
+        });
+</script>
+<body>
+    <div class="centered-container">
+        <img src="./assets/pfp.jpg" alt="Profile Picture" class="profile-picture">
+        <h2 class="title">coolhighzz</h2>
+        <p class="description">"Pull a trigger kill a nigger"</p>
+        <div class="server">
+            <h1 class="title-dev">HighzzCloud</h1>
+              <a href="https://discord.gg/fdC6xR4UKU">
+              <button class="joiner-dev">Join</button>
+              </a>
+    </div>
+</body>
+</html>
